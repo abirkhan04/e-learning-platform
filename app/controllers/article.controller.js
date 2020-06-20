@@ -1,5 +1,6 @@
 const constants  = require('../constants.js');
 const Article = require('../model/article.js');
+const moment = require('moment');
 
 exports.post = (req, res) => {
     if (!req.body) {
@@ -9,6 +10,10 @@ exports.post = (req, res) => {
     }
     const article = new Article();
     Object.assign(article, req.body);
+    article.createdAt = moment().format(constants.DATE_FORMAT);
+    if(! req.body.lastModifiedAt)  {
+      req.body.lastModifiedAt = moment().format(constants.DATE_FORMAT);
+    }
     article.save().then(data => {
       res.send(article);
         }).catch(err => {
@@ -33,6 +38,9 @@ exports.put = ( req, res) => {
       res.status(400).send({
         message: constants.MESSAGE_NOT_EMPTY,
       });
+    }
+    if(! req.body.lastModifiedAt)  {
+      req.body.lastModifiedAt = moment().format(constants.DATE_FORMAT);
     }
     Article.findByIdAndUpdate(req.body._id, req.body, { new: true })
       .then(article => {
@@ -65,4 +73,19 @@ exports.delete = (req, res) => {
           message: err.message
     });
   });
+}
+
+exports.getByUri = (req, res) => {
+   Article.findOne({uri: req.params.uri}, (err, article) => {
+        if(err) throw err;
+        if(!article) {
+          res.json({success: false, message: constants.MESSAGE_NOT_FOUND});
+          } else if (article) {
+          res.send(article);
+        }
+     }).catch(err => {
+        res.status(404).send({
+        message: err.message
+    });
+  })
 }
