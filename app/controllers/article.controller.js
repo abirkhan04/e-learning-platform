@@ -10,7 +10,7 @@ exports.post = (req, res) => {
     const article = new Article();
     Object.assign(article, req.body);
     article.save().then(data => {
-      res.send(category);
+      res.send(article);
         }).catch(err => {
       res.status(500).send({
         message: err.message || constants.MESSAGE_ERROR,
