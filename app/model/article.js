@@ -5,6 +5,12 @@ module.exports = (sequelize, Sequelize) => {
     uri: {
       type: Sequelize.STRING,
     },
+    title: {
+      type: Sequelize.STRING,
+    },
+    author: {
+      type: Sequelize.STRING,
+    },
     lastModifiedAt: {
       type: Sequelize.DATE,
     },
