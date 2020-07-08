@@ -1,6 +1,5 @@
 const constants = require("../constants.js");
 const db = require("../models");
-const Op = db.Sequelize.Op;
 const moment = require("moment");
 const Article = db.articles;
 
@@ -47,14 +46,15 @@ exports.put = (req, res) => {
   if (!req.body.lastModifiedAt) {
     req.body.lastModifiedAt = moment().format(constants.DATE_FORMAT);
   }
-  Article.update(req.body, { where: { id: req.body._id } })
-    .then((article) => {
-      if (!article) {
-        res.status(404).send({
+  Article.update(req.body, { where: { id: req.body.id } })
+    .then((number) => {
+      if (number == 1) {
+        res.send(req.body);
+      } else {
+        res.send({
           message: constants.MESSAGE_NOT_FOUND,
         });
       }
-      res.send(article);
     })
     .catch((err) => {
       res.status(500).send({
@@ -64,38 +64,30 @@ exports.put = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Article.destroy(
-    {
+  const id = req.params.id;
+  Article.findByPk(id).then((article) => {
+    Article.destroy({
       where: {
         id: req.params.id,
       },
-    }, (err, article) => {
-      if (err) throw err;
-      if (!article) {
-        res.json({ success: false, message: constants.MESSAGE_NOT_FOUND });
-      } else if (article) {
-        article.delete();
-        res.json(article);
+    }).then((number) => {
+      if (number == 1) {
+        res.send(article);
       }
-    }
-  ).catch((err) => {
-    res.status(404).send({
-      message: err.message,
+      res.send({
+        message: constants.MESSAGE_NOT_FOUND,
+      });
     });
   });
 };
 
-// exports.getByUri = (req, res) => {
-//    Article.findOne({uri: req.params.uri}, (err, article) => {
-//         if(err) throw err;
-//         if(!article) {
-//           res.json({success: false, message: constants.MESSAGE_NOT_FOUND});
-//           } else if (article) {
-//           res.send(article);
-//         }
-//      }).catch(err => {
-//         res.status(404).send({
-//         message: err.message
-//     });
-//   });
-//}
+exports.getByUri = (req, res) => {
+   Article.findAll( {where : {uri: req.params.uri}}).then((articles)=>{
+     res.send(articles[0]);
+   }).catch(err=>{
+     res.status(500).send({
+       message: err.message || constants.MESSAGE_ERROR
+     })
+   });
+}
+
