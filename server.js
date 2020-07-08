@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-//const csp = require('content-security-policy');
+const db = require('./app/models');
 
 const app = express();
 
@@ -13,17 +13,8 @@ app.use(function (req, res, next) {
     next();
 });
 app.use(express.static(path.join(__dirname, 'dist')));
-
-const dbConfig = require('./config/database.config.js');
-const mongoose = require('mongoose');
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect(dbConfig.url, { useFindAndModify: false }).then(() => {
-    console.log("Successfully connected to the database");
-}).catch(err => {
-    console.log('Could not connect to the database. Exiting now...', err);
-    process.exit();
+db.sequelize.sync({force: true}).then(()=> {
+    console.log('Db droped and synced.')
 });
 
 require('./app/routes/article.route.js')(app);

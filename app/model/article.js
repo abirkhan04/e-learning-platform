@@ -1,8 +1,16 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const Sequelize = require("sequelize-mock");
 
-module.exports = mongoose.model('Article', new Schema({
-    uri: String,
-    createdAt: Date,
-    lastModifiedAt: Date
-}, { versionKey: false }));
+module.exports = (sequelize, Sequelize) => {
+  const Article = sequelize.define("article", {
+    uri: {
+      type: Sequelize.STRING,
+    },
+    lastModifiedAt: {
+      type: Sequelize.DATE,
+    },
+    published: {
+      type: Sequelize.BOOLEAN,
+    },
+  });
+  return Article;
+};
