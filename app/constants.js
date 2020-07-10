@@ -6,4 +6,5 @@ module.exports = {
     MESSAGE_UPDATE: 'Updated Successfully',
     MESSAGE_NOT_FOUND: 'Entity not found',
     DATE_FORMAT : 'L',
+    NOT_PUBLISHED: 'Article is not Published',
 };

@@ -86,8 +86,23 @@ exports.getByUri = (req, res) => {
      res.send(articles[0]);
    }).catch(err=>{
      res.status(500).send({
-       message: err.message || constants.MESSAGE_ERROR
+        message: err.message || constants.MESSAGE_ERROR
      })
    });
 }
 
+exports.getPublishedArticleByUrl = (req, res) => {
+  Article.findAll({where: {uri: req.params.uri}}).then((articles)=> {
+      if(articles[0].published) {
+        res.send(articles[0]);
+      } else  {
+        res.send({
+          message: constants.NOT_PUBLISHED
+        });
+      }
+  }).catch(err=> {
+      res.status(500).send({
+        message: err.message || constants.MESSAGE_ERROR
+      });
+  });
+}
