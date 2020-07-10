@@ -96,7 +96,7 @@ exports.getPublishedArticleByUrl = (req, res) => {
       if(articles[0].published) {
         res.send(articles[0]);
       } else  {
-        res.send({
+        res.status(412).send({
           message: constants.NOT_PUBLISHED
         });
       }
