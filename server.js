@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 db.sequelize.sync({force: false}).then(()=> {
-    console.log('Db droped and synced.')
+    console.log('Db synced.')
 });
 
 require('./app/routes/article.route.js')(app);
