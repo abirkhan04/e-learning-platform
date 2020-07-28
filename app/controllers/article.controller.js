@@ -9,12 +9,10 @@ exports.post = (req, res) => {
       message: constants.MESSAGE_NOT_EMPTY,
     });
   }
-  const article = {};
   if (!req.body.lastModifiedAt) {
     req.body.lastModifiedAt = moment().format(constants.DATE_FORMAT);
   }
-  Object.assign(article, req.body);
-  Article.create(article)
+  Article.create(req.body)
     .then((article) => {
       res.send(article);
     })

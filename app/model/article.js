@@ -1,5 +1,3 @@
-const Sequelize = require("sequelize-mock");
-
 module.exports = (sequelize, Sequelize) => {
   const Article = sequelize.define("article", {
     uri: {
