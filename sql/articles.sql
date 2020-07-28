@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2020 at 10:54 AM
+-- Generation Time: Jul 28, 2020 at 09:11 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -92,7 +92,10 @@ INSERT INTO `articles` (`id`, `uri`, `title`, `author`, `lastModifiedAt`, `publi
 (51, 'jvm-memory-management', 'Memory Management for Java Virtual Machine', 'Abir Khan', '2020-05-15 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-10 06:07:38'),
 (52, 'solid-principle', 'Solid Principle Explained with Example', 'Abir Khan', '2019-07-14 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-10 06:12:58'),
 (53, 'java-api-for-websocket', 'Introduction to Java Api for Websocket', 'Abir Khan', '2019-02-06 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-10 06:14:59'),
-(54, 'javax-bean-validation', 'The Bean Validation Api in Java', 'Abir Khan', '2019-03-20 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-10 06:17:38');
+(54, 'javax-bean-validation', 'The Bean Validation Api in Java', 'Abir Khan', '2019-03-20 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-10 06:17:38'),
+(55, 'short-discussion-angular-schematics', 'A Short Discussion on Angular Schematics', 'Abir Khan', '2020-07-27 18:00:00', 0, '2020-07-08 09:28:00', '2020-07-28 06:50:11'),
+(56, 'angular-animation-example', 'An Introduction to Angular Animation', 'Abir Khan', '0000-00-00 00:00:00', 1, '2020-07-08 09:28:00', '2020-07-28 07:07:21'),
+(57, 'nosql-discussion', 'A Discussion on NoSQL Databases', 'Abir Khan', '2020-07-27 18:00:00', 0, '2020-07-08 09:28:00', '2020-07-28 07:09:24');
 
 --
 -- Indexes for dumped tables
@@ -113,7 +116,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
