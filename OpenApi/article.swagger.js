@@ -74,7 +74,7 @@ const article = {
         },
     },
     deleteArticle: {
-        tags: ['Article'],
+        tags: ['Articles'],
         description: 'Delete Article by Id',
         operationId: 'deleteArticle',
         parameters: [{
