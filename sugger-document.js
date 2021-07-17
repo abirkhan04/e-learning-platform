@@ -1,4 +1,5 @@
-var article  = require('./OpenApi/article.swagger');
+var article  = require('./open-api/article.swagger');
+var user = require('./open-api/user.swagger');
 
 const swaggerDocument = {
     openapi: '3.0.1',
@@ -25,7 +26,8 @@ const swaggerDocument = {
     ],
     tags: [
         {
-          name: 'Articles'
+          name: 'Articles',
+          name: 'Users'
         }
     ],
     paths: {
@@ -38,7 +40,17 @@ const swaggerDocument = {
         },
         '/article/{id}': {
            delete: article.deleteArticle,
-        }
+        },
+        "/users": {
+            get: user.getUsers
+        },
+        "/user": {
+          post: user.postUser,
+          put: user.putUser
+        },
+        '/user/{id}': {
+          delete: user.deleteUser,
+        },
     },
     components: {
         schemas: {
@@ -63,6 +75,20 @@ const swaggerDocument = {
               published: {
                   type: 'boolean'
               }
+            }
+          },
+          user: {
+            type: 'object',
+            properties : {
+               username: {
+                 type: 'string'
+               },
+               password: {
+                 type: 'string'
+               },
+               active: {
+                 type: 'boolean'
+               }
             }
           }
         }
