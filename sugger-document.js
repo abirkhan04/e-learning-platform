@@ -55,6 +55,12 @@ const swaggerDocument = {
         },
     },
     components: {
+        securitySchemes: {
+          BasicAuth : {
+            type: 'http',
+            scheme: 'basic'
+          }
+        },
         schemas: {
           article: {
             type: "object",
