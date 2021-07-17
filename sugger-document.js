@@ -1,15 +1,15 @@
-var getArticles  = require('./OpenApi/article.swagger');
+var article  = require('./OpenApi/article.swagger');
 
 const swaggerDocument = {
     openapi: '3.0.1',
     info: {
         version: '1.0.0',
         title: 'APIs Document',
-        description: 'your description here',
+        description: 'Javaworm website crud apis',
         termsOfService: '',
         contact: {
             name: 'Abir Khan',
-            email: 'son.hoang01@gmail.com',
+            email: 'khanabir8536@gmail.com',
             url: 'https://hoangtran.co'
         },
         license: {
@@ -31,7 +31,16 @@ const swaggerDocument = {
     paths: {
         "/articles": {
             tags: ['Article Crud'],
-            "get": getArticles
+            get: article.getArticles
+        },
+        "/article": {
+            tags: ['Article Crud'],
+            post: article.postArticle,
+            put: article.putArticle
+        },
+        '/article/{id}': {
+           tags: ['Article Crud'],
+           delete: article.deleteArticle,
         }
     },
     components: {
