@@ -25,21 +25,18 @@ const swaggerDocument = {
     ],
     tags: [
         {
-          name: 'Article Crud'
+          name: 'Articles'
         }
     ],
     paths: {
         "/articles": {
-            tags: ['Article Crud'],
             get: article.getArticles
         },
         "/article": {
-            tags: ['Article Crud'],
             post: article.postArticle,
             put: article.putArticle
         },
         '/article/{id}': {
-           tags: ['Article Crud'],
            delete: article.deleteArticle,
         }
     },
