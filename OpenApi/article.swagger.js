@@ -19,33 +19,6 @@ const article = {
             }
         }
     },
-    putArticle: {
-        tags: ['Articles'],
-        operationId: 'putArticle',
-        requestBody : {
-            description: "Update Article",
-            required: true,
-            content: {
-               'application/json': {
-                schema: {
-                   $ref: '#components/schemas/article'
-                }
-            }
-         }
-        },
-        response: {
-            200: {
-                description: "Article to be updated",
-                content: {
-                    "application/json": {
-                        schema: {
-                            $ref: '#components/schemas/article',
-                        }
-                    }
-                }
-            }
-        },
-    },
     postArticle: {
         tags: ['Articles'],
         operationId: 'postArticle',
@@ -63,6 +36,33 @@ const article = {
         response: {
             200: {
                 description: "Article to be posted",
+                content: {
+                    "application/json": {
+                        schema: {
+                            $ref: '#components/schemas/article',
+                        }
+                    }
+                }
+            }
+        },
+    },
+    putArticle: {
+        tags: ['Articles'],
+        operationId: 'putArticle',
+        requestBody : {
+            description: "Update Article",
+            required: true,
+            content: {
+               'application/json': {
+                schema: {
+                   $ref: '#components/schemas/article'
+                }
+            }
+         }
+        },
+        response: {
+            200: {
+                description: "Article to be updated",
                 content: {
                     "application/json": {
                         schema: {
