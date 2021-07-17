@@ -27,6 +27,8 @@ const swaggerDocument = {
     tags: [
         {
           name: 'Articles',
+        },
+        {
           name: 'Users'
         }
     ],
