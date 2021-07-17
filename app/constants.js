@@ -7,4 +7,5 @@ module.exports = {
     MESSAGE_NOT_FOUND: 'Entity not found',
     DATE_FORMAT : 'L',
     NOT_PUBLISHED: 'Article is not Published',
+    AUTH_FAILURE: 'Authentication Failure'
 };

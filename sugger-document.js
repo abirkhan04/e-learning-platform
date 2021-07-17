@@ -30,6 +30,9 @@ const swaggerDocument = {
         },
         {
           name: 'Users'
+        },
+        {
+          name: 'User Authentication'
         }
     ],
     paths: {
@@ -53,14 +56,14 @@ const swaggerDocument = {
         '/user/{id}': {
           delete: user.deleteUser,
         },
+        "/register" : {
+          post: user.register,
+        },
+        "/login": {
+          post: user.login
+        }
     },
     components: {
-        securitySchemes: {
-          BasicAuth : {
-            type: 'http',
-            scheme: 'basic'
-          }
-        },
         schemas: {
           article: {
             type: "object",
@@ -97,6 +100,28 @@ const swaggerDocument = {
                active: {
                  type: 'boolean'
                }
+            }
+          },
+          userBody : {
+            type: 'object',
+            properties: {
+              username: {
+                  type: 'string'
+              },
+              password: {
+                  type: 'string'
+              }
+           }
+          },
+          authResponse: {
+            type:  'object',
+            properties: {
+              success: {
+                type: 'boolean'
+              },
+              token: {
+                type: 'string'
+              }
             }
           }
         }

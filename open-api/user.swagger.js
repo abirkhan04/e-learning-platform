@@ -22,16 +22,16 @@ const user = {
     postUser: {
         tags: ['Users'],
         operationId: 'postUser',
-        requestBody : {
+        requestBody: {
             description: "Save User",
             required: true,
             content: {
-               'application/json': {
-                schema: {
-                   $ref: '#components/schemas/user'
+                'application/json': {
+                    schema: {
+                        $ref: '#components/schemas/user'
+                    }
                 }
             }
-         }
         },
         response: {
             200: {
@@ -49,16 +49,16 @@ const user = {
     putUser: {
         tags: ['Users'],
         operationId: 'putUser',
-        requestBody : {
+        requestBody: {
             description: "Update User",
             required: true,
             content: {
-               'application/json': {
-                schema: {
-                   $ref: '#components/schemas/user'
+                'application/json': {
+                    schema: {
+                        $ref: '#components/schemas/user'
+                    }
                 }
             }
-         }
         },
         response: {
             200: {
@@ -83,8 +83,8 @@ const user = {
             description: 'User Id',
             required: true,
             schema: {
-              type: 'integer',
-              format: 'int64'
+                type: 'integer',
+                format: 'int64'
             }
         }],
         responses: {
@@ -102,6 +102,79 @@ const user = {
                 }
             }
         }
+    },
+    register: {
+        tags: ['User Authentication'],
+        description: 'Register User',
+        operationId: 'Register User',
+        parameters: [
+            {
+                name: 'x-access-token',
+                in: 'header',
+                description: 'Access Token',
+                required: true,
+                schema: {
+                  type: 'string',
+                }
+            }
+        ],
+        requestBody: {
+            description: "Create User",
+            required: true,
+            content: {
+                'application/json': {
+                    schema: {
+                        $ref: '#components/schemas/userBody' 
+                    }
+                }
+            }
+        },
+        responses: {
+            200: {
+                description: "User Registration",
+                content: {
+                    "application/json": {
+                        schema: {
+                            type: 'ob',
+                            items: {
+                                $ref: '#components/schemas/authResponse'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    login: {
+        tags: ['User Authentication'],
+        description: 'User Login',
+        operationId: 'User Login',
+        requestBody: {
+            description: "User Login",
+            required: true,
+            content: {
+                'application/json': {
+                    schema: {
+                        $ref: '#components/schemas/userBody'
+                    }
+                }
+            }
+        },
+        responses: {
+            200: {
+                description: "User Login",
+                content: {
+                    "application/json": {
+                        schema: {
+                            type: 'ob',
+                            items: {
+                                $ref: '#components/schemas/authResponse'
+                            }
+                        }
+                    }
+                }
+            }
+        }  
     }
 }
 

@@ -36,3 +36,25 @@ exports.register = (req, res) => {
     }
   });
 };
+
+
+exports.login =  (req, res)=> {
+
+  if (!req.body) {
+    return res.status(400).send({
+      message: constants.MESSAGE_NOT_EMPTY,
+    });
+  }
+
+  User.findOne({where: {username: req.body.username}}).then((user)=> {
+      bcrypt.compare(req.body.password, user.password, (err, response)=> {
+          if(err) res.status(401).send(constants.AUTH_FAILURE);
+          if(response) {
+            const token = jwt.sign({ id: user.id }, config.secret, {
+              expiresIn: 86400,
+            });
+            res.send({success: true, token });
+          }
+      });
+  });
+}

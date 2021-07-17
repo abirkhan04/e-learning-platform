@@ -22,6 +22,15 @@ const article = {
     postArticle: {
         tags: ['Articles'],
         operationId: 'postArticle',
+        parameters: [{
+            name: 'x-access-token',
+            in: 'header',
+            description: 'Access Token',
+            required: true,
+            schema: {
+              type: 'string',
+            }
+        }],
         requestBody : {
             description: "Save Article",
             required: true,
@@ -49,6 +58,15 @@ const article = {
     putArticle: {
         tags: ['Articles'],
         operationId: 'putArticle',
+        parameters: [{
+            name: 'x-access-token',
+            in: 'header',
+            description: 'Access Token',
+            required: true,
+            schema: {
+              type: 'string',
+            }
+        }],
         requestBody : {
             description: "Update Article",
             required: true,
@@ -78,6 +96,15 @@ const article = {
         description: 'Delete Article by Id',
         operationId: 'deleteArticle',
         parameters: [{
+            name: 'x-access-token',
+            in: 'header',
+            description: 'Access Token',
+            required: true,
+            schema: {
+              type: 'string',
+            }
+        },
+        {
             name: 'id',
             in: 'path',
             description: 'Article Id',
