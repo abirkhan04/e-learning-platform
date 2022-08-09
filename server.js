@@ -1,4 +1,6 @@
 var swaggerDocument = require('./sugger-document');
+var fs = require('fs');
+var https = require('https');
 
 const express = require('express');
 var router = express.Router();
@@ -6,8 +8,12 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./app/models');
 const swaggerUi = require('swagger-ui-express');
+var certificate = fs.readFileSync('certificate.pem', 'utf8');
+var key = fs.readFileSync('private.key', 'utf8');
+var credentials = {key: key, cert: certificate};
 
 const app = express();
+var httpsServer = https.createServer(credentials, app);
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -32,4 +38,8 @@ app.get('/', (req, res) => {
 
 app.listen(8081, () => {
     console.log("Server is listening on port 8080");
+});
+
+httpsServer.listen(8443, ()=> {
+    console.log("Server is listening on port 8443");
 });
