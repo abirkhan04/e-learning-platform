@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2022 at 10:10 AM
+-- Generation Time: Aug 09, 2022 at 06:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -74,7 +74,33 @@ INSERT INTO `articles` (`id`, `uri`, `title`, `description`, `author`, `lastModi
 (28, 'simple-state-management', 'Simple State Management in Angular', 'Simple State Management in Angular', 'Md Abir Khan', '2022-04-14 10:45:01', 1, '2022-04-14 10:45:01', '2022-04-14 10:45:01'),
 (29, 'angular-directives', 'Angular Directive Description with Examples', 'Angular Directive Description with Examples', 'Md Abir Khan', '2022-04-14 10:46:10', 1, '2022-04-14 10:46:10', '2022-04-14 10:46:10'),
 (30, 'rxjs-ten-operators', 'RxJs Ten Operators with Their Use Cases', 'RxJs Ten Operators with Their Use Cases', 'Md Abir Khan', '2022-04-14 10:48:09', 1, '2022-04-14 10:48:09', '2022-04-14 10:48:09'),
-(31, 'dom-manipulation-angular', 'DOM Manipulation in Angular Components', 'DOM Manipulation in Angular Components', 'Md Abir Khan', '2022-04-14 10:49:59', 1, '2022-04-14 10:49:59', '2022-04-14 10:49:59');
+(31, 'dom-manipulation-angular', 'DOM Manipulation in Angular Components', 'DOM Manipulation in Angular Components', 'Md Abir Khan', '2022-04-14 10:49:59', 1, '2022-04-14 10:49:59', '2022-04-14 10:49:59'),
+(32, 'content-projection-angular', 'Content Projection in Angular Described with Example', 'Content Projection in Angular Described with Example', 'Md Abir Khan', '2022-04-14 10:49:59', 1, '2022-04-14 10:49:59', '2022-04-14 10:49:59'),
+(33, 'short-discussion-angular-schematics', 'A Short Discussion on Angular Schematics', 'A Short Discussion on Angular Schematics', 'Abir Khan', '2022-08-09 11:38:57', 1, '2022-08-09 11:38:57', '2022-08-09 11:38:57'),
+(34, 'angular-animation-example', 'Angular Animation Apis Description with Example', 'Angular Animation Apis Description with Example', 'Abir Khan', '2022-08-09 12:11:25', 1, '2022-08-09 12:11:25', '2022-08-09 12:11:25'),
+(35, 'all-react-hooks', 'All React Hooks Explained with Example', 'All React Hooks Explained with Example', 'Abir Khan', '2022-08-09 12:13:11', 1, '2022-08-09 12:13:11', '2022-08-09 12:13:11'),
+(36, 'react-component-lifecycle', 'React Component Lifecycle Explained', 'React Component Lifecycle Explained', 'Abir Khan', '2022-08-09 12:14:13', 1, '2022-08-09 12:14:13', '2022-08-09 12:14:13'),
+(37, 'custom-directives-vue', 'Working with Custom Directives in Vue.js', 'Working with Custom Directives in Vue.js', 'Abir Khan', '2022-08-09 12:15:19', 1, '2022-08-09 12:15:19', '2022-08-09 12:15:19'),
+(38, 'vuex-plugins', 'A Discussion on Vuex Plugins', 'A Discussion on Vuex Plugins', 'Abir Khan', '2022-08-09 12:16:05', 1, '2022-08-09 12:16:05', '2022-08-09 12:16:05'),
+(39, 'vue-slot', 'A Discussion on Vue Slot', 'A Discussion on Vue Slot', 'Abir Khan', '2022-08-09 12:17:08', 1, '2022-08-09 12:17:08', '2022-08-09 12:17:08'),
+(40, 'soap-in-mule', 'SOAP Service in Mule.', 'SOAP Service in Mule.', 'Abir Khan', '2022-08-09 12:48:06', 1, '2022-08-09 12:48:06', '2022-08-09 12:48:06'),
+(41, 'mule-flows-variables-and-properties', 'Mule Flows, Variables and Properties', 'Mule Flows, Variables and Properties', 'Abir Khan', '2022-08-09 12:49:08', 1, '2022-08-09 12:49:08', '2022-08-09 12:49:08'),
+(42, 'spring-boot-mysql-docker', 'Dockerizing Spring Boot & MySql Application with Docker Compose.', 'Dockerizing Spring Boot & MySql Application with Docker Compose.', 'Abir Khan', '2022-08-09 12:50:14', 1, '2022-08-09 12:50:14', '2022-08-09 12:50:14'),
+(43, 'deploying-to-external-tomcat', 'Deploying Multi-module Spring Application to External Tomcat', 'Deploying Multi-module Spring Application to External Tomcat', 'Abir Khan', '2022-08-09 12:51:48', 1, '2022-08-09 12:51:48', '2022-08-09 12:51:48'),
+(44, 'junit-spy-vs-mock', 'Spy Vs Mock Object in Junit', 'Spy Vs Mock Object in Junit', 'Abir Khan', '2022-08-09 12:53:27', 1, '2022-08-09 12:53:27', '2022-08-09 12:53:27'),
+(45, 'mocking-static-method', 'Mocking Static Method Using Power Mock', 'Mocking Static Method Using Power Mock', 'Abir Khan', '2022-08-09 13:11:11', 1, '2022-08-09 13:11:11', '2022-08-09 13:11:11'),
+(46, 'top-25-core-java-questions', 'Top 25 Core Java Questions', 'Top 25 Core Java Questions', 'Abir Khan', '2022-08-09 13:13:45', 1, '2022-08-09 13:13:45', '2022-08-09 13:13:45'),
+(47, 'java-api-for-websocket', 'Intro to Java Api for Websocket', 'Intro to Java Api for Websocket.', 'Abir Khan', '2022-08-09 13:35:38', 1, '2022-08-09 13:35:38', '2022-08-09 13:35:38'),
+(48, 'method-reference-tutorial', 'Java 8 Method Reference Tutorial', 'Java 8 Method Reference Tutorial', 'Abir Khan', '2022-08-09 16:35:59', 1, '2022-08-09 16:35:59', '2022-08-09 16:35:59'),
+(49, 'intro-to-java8streams', 'Intro to Java 8 Stream', 'Intro to Java 8 Stream', 'Abir Khan', '2022-08-09 16:36:50', 1, '2022-08-09 16:36:50', '2022-08-09 16:36:50'),
+(50, 're-entrant-lock', 'ReentrantLock Description with Example', 'ReentrantLock Description with Example', 'Abir Khan', '2022-08-09 16:37:38', 1, '2022-08-09 16:37:38', '2022-08-09 16:37:38'),
+(51, 're-active-stream', 'Exploring Reactive Stream in Java', 'Exploring Reactive Stream in Java', 'Abir Khan', '2022-08-09 16:38:50', 1, '2022-08-09 16:38:50', '2022-08-09 16:38:50'),
+(52, 'design-pattern-use-case', 'Use Case of Design Patterns', 'Use Case of Design Patterns', 'Abir Khan', '2022-08-09 16:39:45', 1, '2022-08-09 16:39:45', '2022-08-09 16:39:45'),
+(53, 'solid-principle', 'Solid Principle Explained with Example.', 'Solid Principle Explained with Example.', 'Abir Khan', '2022-08-09 16:40:16', 1, '2022-08-09 16:40:16', '2022-08-09 16:40:16'),
+(54, 'java-generics', 'Java Generics Description with Example.', 'Java Generics Description with Example.', 'Abir Khan', '2022-08-09 16:41:33', 1, '2022-08-09 16:41:33', '2022-08-09 16:41:33'),
+(55, 'jvm-memory-management', 'Memory Management for Java Virtual Machine.', 'Memory Management for Java Virtual Machine.', 'Abir Khan', '2022-08-09 16:42:21', 1, '2022-08-09 16:42:21', '2022-08-09 16:42:21'),
+(56, 'javax-bean-validation', 'The Bean Validation Api in Java', 'The Bean Validation Api in Java', 'Abir Khan', '2022-08-09 16:43:18', 1, '2022-08-09 16:43:18', '2022-08-09 16:43:18'),
+(57, 'slf4j-in-tomcat', 'Configuring Tomcat to log Slf4j in the console', 'Configuring Tomcat to log Slf4j in the console', 'Abir Khan', '2022-08-09 16:44:14', 0, '2022-08-09 16:44:14', '2022-08-09 16:44:14');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +120,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
