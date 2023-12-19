@@ -18,6 +18,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.articles = require("./model/article.js")(sequelize, Sequelize);
-db.users = require("./model/user.js")(sequelize, Sequelize);
+db.courses = require("./model/course.js")(sequelize, Sequelize);
+db.enrollment = require("./model/enrollment.js")(sequelize, Sequelize);
+db.enrollment.belongsTo(db.courses);
 module.exports = db;

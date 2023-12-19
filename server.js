@@ -8,12 +8,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./app/models');
 const swaggerUi = require('swagger-ui-express');
-var certificate = fs.readFileSync('certificate.pem', 'utf8');
-var key = fs.readFileSync('private.key', 'utf8');
-var credentials = {key: key, cert: certificate};
 
 const app = express();
-var httpsServer = https.createServer(credentials, app);
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -29,17 +25,14 @@ db.sequelize.sync({force: false}).then(()=> {
     console.log('Db synced.')
 });
 
-require('./app/routes/article.route.js')(app);
-require('./app/routes/auth.route.js')(app);
+require('./app/routes/course.route.js')(app);
+require('./app/routes/enrollment.route.js')(app);
 
 app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to JavaWorm Blog Server" });
+    res.json({ "message": "Welcome to e learning platform" });
 });
 
 app.listen(8081, () => {
-    console.log("Server is listening on port 8080");
+    console.log("Server is listening on port 8081");
 });
-
-httpsServer.listen(8443, ()=> {
-    console.log("Server is listening on port 8443");
-});
+module.exports = app;

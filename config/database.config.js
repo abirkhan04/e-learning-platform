@@ -2,8 +2,8 @@ module.exports = {
     HOST: "localhost",
     PORT: "3306",
     USER: "root",
-    PASSWORD: '209121A_bir',
-    DB: "javaworm_blog",
+    PASSWORD: '',
+    DB: "sheba",
     dialect: "mysql",
     pool: {
       max: 5,

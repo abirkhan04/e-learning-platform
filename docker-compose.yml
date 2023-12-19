@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # Node.js application service
+  app:
+    build: .
+    ports:
+      - "8081:3000"
+    depends_on:
+      - db
+
+  # MySQL database service
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: sheba
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
