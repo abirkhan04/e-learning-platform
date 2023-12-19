@@ -6,9 +6,9 @@ Running without docker:
 3. run command: npm run dev to run the project in dev environment. You should get APIs in localhost:8081/
 
 APIs are: 
-1. localhost:8081/courses get request
-2. localhost:8081/course/id get request
-3. localhost:8081/create-course post request with body
+i) localhost:8081/courses get request
+ii). localhost:8081/course/id get request
+iii). localhost:8081/create-course post request with body
 {
     "title": "test",
     "description" : "test description",
@@ -17,13 +17,13 @@ APIs are:
     "price": 10.0 
 }
 
-4. localhost:8081/filter-courses post request with body:
+iv) localhost:8081/filter-courses post request with body:
 {
     "instructor": "test instructor",
     "duration": 200,
     "price": 1000
 }
-5. localhost:8081/enrollment post request with body
+v) localhost:8081/enrollment post request with body
 {
     "name": "test",
     "courseId": 1,
